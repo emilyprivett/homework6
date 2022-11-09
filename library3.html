@@ -6,6 +6,7 @@
     <title>JavaScript</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #FF69B4">
         <a class="navbar-brand" href="#">Homework 6</a>
@@ -29,6 +30,19 @@
             </ul>
         </div>
     </nav>
-    <h1 style="text-align:center">Library 3</h1>
+    <h1 style="text-align:center">Library 3- Plotly</h1>
+    <div id="myDonutChart" style="width:100%;max-width:700px"></div>
+
+    <script>
+        var xArray = ["Italy", "France", "Spain", "USA", "Argentina"];
+        var yArray = [55, 49, 44, 24, 15];
+
+        var layout = { title: "World Wide Wine Production" };
+
+        var data = [{ labels: xArray, values: yArray, hole: .4, type: "pie" }];
+
+        Plotly.newPlot("myDonutChart", data, layout);
+    </script>
+
 </body>
 </html>
